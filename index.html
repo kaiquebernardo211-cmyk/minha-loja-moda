@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja de Moda | Tendências 2024</title>
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tighter text-indigo-600 italic">STYLE.CO</a>
+            <div class="hidden md:flex space-x-8 font-medium text-gray-700">
+                <a href="#novidades" class="hover:text-indigo-600">Novidades</a>
+                <a href="#colecao" class="hover:text-indigo-600">Coleção</a>
+                <a href="#faq" class="hover:text-indigo-600">Dúvidas</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+                <i class="fa-solid fa-bag-shopping text-gray-500"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Principal -->
+    <header class="relative h-[500px] flex items-center justify-center bg-gray-900 text-white overflow-hidden">
+        <img src="https://unsplash.com" class="absolute w-full h-full object-cover opacity-40" alt="Loja de Roupa">
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 uppercase tracking-tighter">New Collection</h1>
+            <p class="text-lg md:text-xl mb-8 font-light">As peças essenciais para o seu guarda-roupa de inverno.</p>
+            <a href="#colecao" class="bg-white text-black px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-indigo-600 hover:text-white transition">Comprar Agora</a>
+        </div>
+    </header>
+
+    <!-- Vitrine de Produtos -->
+    <section id="colecao" class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Peças em Destaque</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Look 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-4">
+                    <img src="https://unsplash.com" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 w-full bg-white/90 p-3 translate-y-full group-hover:translate-y-0 transition">
+                        <button class="w-full text-sm font-bold uppercase">+ Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <h3 class="font-bold">Sobretudo Minimalist Gray</h3>
+                <p class="text-gray-500">R$ 499,00</p>
+            </div>
+
+            <!-- Look 2 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-4">
+                    <img src="https://unsplash.com" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 w-full bg-white/90 p-3 translate-y-full group-hover:translate-y-0 transition">
+                        <button class="w-full text-sm font-bold uppercase">+ Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <h3 class="font-bold">Vestido Floral Silk</h3>
+                <p class="text-gray-500">R$ 289,90</p>
+            </div>
+
+            <!-- Look 3 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-4">
+                    <img src="https://unsplash.com" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 w-full bg-white/90 p-3 translate-y-full group-hover:translate-y-0 transition">
+                        <button class="w-full text-sm font-bold uppercase">+ Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <h3 class="font-bold">Blusa Trico Soft Cream</h3>
+                <p class="text-gray-500">R$ 159,00</p>
+            </div>
+
+            <!-- Look 4 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-4">
+                    <img src="https://unsplash.com" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 w-full bg-white/90 p-3 translate-y-full group-hover:translate-y-0 transition">
+                        <button class="w-full text-sm font-bold uppercase">+ Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <h3 class="font-bold">Jaqueta Couro Premium</h3>
+                <p class="text-gray-500">R$ 650,00</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Roupa -->
+    <section id="faq" class="py-16 bg-gray-100 px-6">
+        <div class="container mx-auto max-w-2xl text-center">
+            <h2 class="text-2xl font-bold mb-8 italic">Informações Úteis</h2>
+            <div class="text-left space-y-4">
+                <details class="bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                    <summary class="font-bold">Quais as formas de pagamento?</summary>
+                    <p class="mt-2 text-gray-600 text-sm">Aceitamos todos os cartões de crédito em até 6x sem juros, PIX com 5% de desconto e boleto bancário.</p>
+                </details>
+                <details class="bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                    <summary class="font-bold">Como funciona a troca?</summary>
+                    <p class="mt-2 text-gray-600 text-sm">A primeira troca é grátis! Você tem até 30 dias após o recebimento para solicitar pelo nosso canal de atendimento.</p>
+                </details>
+                <details class="bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                    <summary class="font-bold">Vocês entregam para todo o Brasil?</summary>
+                    <p class="mt-2 text-gray-600 text-sm">Sim! Enviamos via Correios e Transportadora. O frete é grátis para compras acima de R$ 299,00.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-white py-12 px-6 border-t">
+        <div class="container mx-auto text-center">
+            <h4 class="text-xl font-black mb-4">STYLE.CO</h4>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-black"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-black"><i class="fa-brands fa-pinterest text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-black"><i class="fa-brands fa-tiktok text-xl"></i></a>
+            </div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest">&copy; 2024 Sua Loja de Moda Ltda.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
