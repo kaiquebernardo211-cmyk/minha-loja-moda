@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ELITE MODAS - Nova Coleção 2026. Moda minimalista no Centro de Aracaju, SE. R. Itabaianinha, 293. Tel: (79) 3512-1213">
+    <meta name="description" content="ELITE MODAS - Nova Coleção 2026. Moda no Centro de Aracaju. R. Itabaianinha, 293. Tel: (79) 3512-1213">
     <title>ELITE MODAS | Moda 2026 - Centro Aracaju</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,11 +39,10 @@
         }
 .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
-        /* Gradiente da marca */
-      .gradient-elite {
+   .gradient-elite {
             background: linear-gradient(135deg, #facc15 0%, #ec4899 100%);
         }
-      .text-gradient-elite {
+   .text-gradient-elite {
             background: linear-gradient(135deg, #facc15 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -70,4 +69,272 @@
             </div>
             <div class="border-t pt-4">
                 <div class="flex justify-between font-bold text-lg mb-4">
-                    <span>Total
+                    <span>Total:</span>
+                    <span id="total-carrinho">R$ 0,00</span>
+                </div>
+                <button onclick="finalizarWhatsApp()" class="w-full gradient-elite text-white py-3 rounded-xl font-bold hover:opacity-90 transition">Finalizar no WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <nav class="glass shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-black italic tracking-tighter text-gradient-elite">ELITE MODAS</h1>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#inicio" class="font-semibold text-sm uppercase hover:text-pink-500 transition">Início</a>
+                <a href="#colecao" class="font-semibold text-sm uppercase hover:text-pink-500 transition">Coleção</a>
+                <a href="#localizacao" class="font-semibold text-sm uppercase hover:text-pink-500 transition">Loja Física</a>
+            </div>
+            <button onclick="toggleCarrinho()" class="relative text-xl hover:text-pink-500 transition">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="contador-carrinho" class="absolute -top-2 -right-2 gradient-elite text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <header id="inicio" class="relative h-[500px] md:h-[650px] flex items-center justify-center bg-slate-900 text-white text-center px-4">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071" alt="Banner ELITE MODAS" class="absolute w-full h-full object-cover opacity-40">
+        <div class="relative z-10 max-w-3xl animate-fadeUp">
+            <p class="uppercase tracking-[0.3em] text-sm mb-4 text-slate-300">Coleção 2026</p>
+            <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Elite é ser Você</h2>
+            <p class="mb-8 text-lg text-slate-200 max-w-xl mx-auto">Moda autoral no Centro de Aracaju. R. Itabaianinha, 293 - (79) 3512-1213</p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#colecao" class="bg-yellow-400 text-slate-900 px-8 py-3 font-bold uppercase shadow-xl hover:bg-pink-500 hover:text-white transition duration-300 inline-block">Ver Peças</a>
+                <a href="#localizacao" class="bg-transparent border-2 border-white text-white px-8 py-3 font-bold uppercase hover:bg-white hover:text-slate-900 transition duration-300 inline-block">Visitar Loja</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Coleção da Loja -->
+    <section id="colecao" class="py-20 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl md:text-5xl font-black mb-4">Peças ELITE MODAS</h3>
+            <p class="text-slate-600 max-w-2xl mx-auto">Criação própria, produção local. Estoque limitado em cada peça.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- 1. Sobretudo -->
+            <div class="group">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-500">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?q=80&w=1974" alt="Sobretudo Elite" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 gradient-elite text-white text-xs px-3 py-1 rounded-full font-bold">EXCLUSIVO</span>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-xl mb-1">Sobretudo Elite</h4>
+                        <p class="text-slate-500 text-sm mb-3">Lã italiana | P ao GG</p>
+                        <p class="text-pink-500 font-black text-2xl mb-4">R$ 499,00</p>
+                        <button onclick="addCarrinho('Sobretudo Elite', 499.00)" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-pink-500 transition">Adicionar à Sacola</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Vestido -->
+            <div class="group">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-500">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070" alt="Vestido Seda Elite" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-xl mb-1">Vestido Seda Elite</h4>
+                        <p class="text-slate-500 text-sm mb-3">Seda pura | P ao G</p>
+                        <p class="text-pink-500 font-black text-2xl mb-4">R$ 289,90</p>
+                        <button onclick="addCarrinho('Vestido Seda Elite', 289.90)" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-pink-500 transition">Adicionar à Sacola</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Blazer -->
+            <div class="group">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-500">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1936" alt="Blazer Elite" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-yellow-400 text-slate-900 text-xs px-3 py-1 rounded-full font-bold">MAIS VENDIDO</span>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-xl mb-1">Blazer Elite</h4>
+                        <p class="text-slate-500 text-sm mb-3">Alfaiataria | P ao GG</p>
+                        <p class="text-pink-500 font-black text-2xl mb-4">R$ 399,90</p>
+                        <button onclick="addCarrinho('Blazer Elite', 399.90)" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-pink-500 transition">Adicionar à Sacola</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Calça -->
+            <div class="group">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-500">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1974" alt="Calça Linho Elite" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-xl mb-1">Calça Linho Elite</h4>
+                        <p class="text-slate-500 text-sm mb-3">Linho natural | 36 ao 44</p>
+                        <p class="text-pink-500 font-black text-2xl mb-4">R$ 259,90</p>
+                        <button onclick="addCarrinho('Calça Linho Elite', 259.90)" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-pink-500 transition">Adicionar à Sacola</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Camisa -->
+            <div class="group">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-500">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588359346102-4bb14e15c15c?q=80&w=1974" alt="Camisa Algodão Elite" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 gradient-elite text-white text-xs px-3 py-1 rounded-full font-bold">NEW</span>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-xl mb-1">Camisa Algodão Elite</h4>
+                        <p class="text-slate-500 text-sm mb-3">Algodão egípcio | P ao G</p>
+                        <p class="text-pink-500 font-black text-2xl mb-4">R$ 199,90</p>
+                        <button onclick="addCarrinho('Camisa Algodão Elite', 199.90)" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-pink-500 transition">Adicionar à Sacola</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Saia -->
+            <div class="group">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-500">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=1974" alt="Saia Plissada Elite" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-xl mb-1">Saia Plissada Elite</h4>
+                        <p class="text-slate-500 text-sm mb-3">Crepe | P ao G</p>
+                        <p class="text-pink-500 font-black text-2xl mb-4">R$ 229,90</p>
+                        <button onclick="addCarrinho('Saia Plissada Elite', 229.90)" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-pink-500 transition">Adicionar à Sacola</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl md:text-5xl font-black mb-4">Loja Física no Centro de Aracaju</h3>
+                <p class="text-slate-600 max-w-2xl mx-auto">Venha provar as peças e conhecer nosso ateliê. Estamos na R. Itabaianinha, pertinho de tudo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center bg-slate-50 rounded-2xl shadow-xl p-8">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">ELITE MODAS - Centro</h4>
+                    <div class="space-y-5 text-slate-700">
+                        <p class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-pink-500 mt-1 text-xl"></i>
+                            <span><strong>Endereço:</strong><br>R. Itabaianinha, 293<br>Centro, Aracaju - SE<br>CEP: 49010-190</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-pink-500 text-xl"></i>
+                            <span><strong>Horário:</strong><br>Seg a Sáb: 9h às 18h</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-pink-500 text-xl"></i>
+                            <span><strong>Telefone:</strong><br>(79) 3512-1213</span>
+                        </p>
+                    </div>
+                    <a href="https://maps.app.goo.gl/CpZeX59tNAnqaCkx6?g_st=ac" target="_blank" class="mt-8 inline-block gradient-elite text-white px-8 py-4 font-bold uppercase rounded-xl hover:opacity-90 transition">
+                        <i class="fa-solid fa-diamond-turn-right mr-2"></i>Abrir Rota no Google Maps
+                    </a>
+                </div>
+                <div class="h-80 md:h-[450px] rounded-xl overflow-hidden shadow-lg">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.5!2d-37.07!3d-10.91!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.%20Itabaianinha%2C%20293%20-%20Centro%2C%20Aracaju%20-%20SE!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 text-center md:text-left mb-12">
+                <div>
+                    <h1 class="text-4xl font-black italic tracking-tighter mb-4 text-gradient-elite">ELITE MODAS</h1>
+                    <p class="text-slate-400">Moda autoral no Centro de Aracaju desde 2026.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold uppercase mb-4 tracking-wider">Navegue</h5>
+                    <div class="space-y-2 text-slate-400">
+                        <a href="#inicio" class="block hover:text-pink-400 transition">Início</a>
+                        <a href="#colecao" class="block hover:text-pink-400 transition">Coleção</a>
+                        <a href="#localizacao" class="block hover:text-pink-400 transition">Loja Física</a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold uppercase mb-4 tracking-wider">Atendimento</h5>
+                    <p class="text-slate-400 mb-2">Seg a Sáb: 9h às 18h</p>
+                    <a href="https://wa.me/557935121213" class="text-slate-400 hover:text-pink-400 transition">WhatsApp: (79) 3512-1213</a>
+                </div>
+                <div>
+                    <h5 class="font-bold uppercase mb-4 tracking-wider">Siga</h5>
+                    <div class="flex justify-center md:justify-start gap-6 text-2xl">
+                        <a href="#" class="hover:text-pink-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-pink-400 transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                <p>© 2026 ELITE MODAS - Todos os direitos reservados | R. Itabaianinha, 293 - Centro, Aracaju - SE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let carrinho = [];
+        let total = 0;
+
+        function toggleCarrinho() {
+            document.getElementById('carrinho').classList.toggle('translate-x-full');
+        }
+
+        function addCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            total += preco;
+            atualizarCarrinho();
+            toggleCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const itensEl = document.getElementById('itens-carrinho');
+            const totalEl = document.getElementById('total-carrinho');
+            const contadorEl = document.getElementById('contador-carrinho');
+
+            if (carrinho.length === 0) {
+                itensEl.innerHTML = '<p class="text-slate-500 text-center mt-10">Sua sacola está vazia</p>';
+            } else {
+                itensEl.innerHTML = carrinho.map(item => `
+                    <div class="flex justify-between items-center mb-4 pb-4 border-b">
+                        <div>
+                            <p class="font-semibold">${item.nome}</p>
+                            <p class="text-pink-500 font-bold">R$ ${item.preco.toFixed(2).replace('.', ',')}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            totalEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+            contadorEl.textContent = carrinho.length;
+        }
+
+        function finalizarWhatsApp() {
+            if(carrinho.length === 0) return;
+            let msg = 'Olá ELITE MODAS! Quero finalizar meu pedido:%0A%0A';
+            carrinho.forEach(item => {
+                msg += `• ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}%0A`;
+            });
+            msg += `%0ATotal: R$ ${total.toFixed(2).replace('.', ',')}%0A%0APodemos combinar a retirada na loja da R. Itabaianinha, 293?`;
+            window.open(`https://wa.me/557935121213?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
