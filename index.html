@@ -3,67 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="STYLE.CO - Nova Coleção 2026. Moda minimalista, peças exclusivas e design atemporal.">
     <title>STYLE.CO | Moda 2026</title>
+
+    <!-- Tailwind + Fontes + Ícones -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        .whatsapp-float {
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        html { scroll-behavior: smooth; }
+
+        /* Efeito glass no menu */
+       .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Animação do banner */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+       .animate-fadeUp { animation: fadeUp 0.8s ease-out forwards; }
+
+       .whatsapp-float {
             position: fixed; bottom: 20px; right: 20px;
             background-color: #25d366; color: white;
             width: 60px; height: 60px; border-radius: 50px;
             display: flex; align-items: center; justify-content: center;
             font-size: 30px; box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
+            z-index: 1000; transition: all 0.3s;
         }
+       .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <a href="https://wa.me/seunumeroaqui" class="whatsapp-float" target="_blank">
-        <span style="font-style: normal;">WP</span>
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/5579999999999?text=Olá!%20Vim%20pela%20STYLE.CO%20e%20quero%20saber%20mais!" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Carrinho Lateral -->
+    <div id="carrinho" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-[100] translate-x-full transition-transform duration-300">
+        <div class="p-6 flex-col h-full">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-black">Sacola</h3>
+                <button onclick="toggleCarrinho()" class="text-2xl hover:text-indigo-600"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="itens-carrinho" class="flex-1 overflow-y-auto">
+                <p class="text-slate-500 text-center mt-10">Sua sacola está vazia</p>
+            </div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between font-bold text-lg mb-4">
+                    <span>Total:</span>
+                    <span id="total-carrinho">R$ 0,00</span>
+                </div>
+                <button class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-indigo-600 transition">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <nav class="glass shadow-sm sticky top-0 z-50 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-black text-indigo-600 italic tracking-tighter">STYLE.CO</h1>
+            <h1 class="text-3xl font-black text-indigo-600 italic tracking-tighter">STYLE.CO</h1>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#inicio" class="font-semibold text-sm uppercase hover:text-indigo-600 transition">Início</a>
+                <a href="#colecao" class="font-semibold text-sm uppercase hover:text-indigo-600 transition">Coleção</a>
+                <a href="#sobre" class="font-semibold text-sm uppercase hover:text-indigo-600 transition">Sobre</a>
+            </div>
+            <button onclick="toggleCarrinho()" class="relative text-xl hover:text-indigo-600 transition">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="contador-carrinho" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+            </button>
         </div>
     </nav>
 
-    <header class="relative h-[500px] flex items-center justify-center bg-slate-900 text-white text-center px-4 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200" class="absolute w-full h-full object-cover opacity-60">
-        <div class="relative z-10">
-            <h2 class="text-5xl font-bold mb-2 uppercase tracking-widest">Nova Coleção</h2>
-            <p class="mb-8 text-lg italic opacity-90">Tendências exclusivas para você em 2026</p>
-            <a href="#colecao" class="bg-white text-black px-10 py-4 font-bold uppercase transition hover:bg-indigo-600 hover:text-white">Explorar</a>
+    <!-- Banner -->
+    <header id="inicio" class="relative h-[90vh] flex items-center justify-center bg-slate-900 text-white text-center px-4">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071" alt="Banner Moda 2026" class="absolute w-full h-full object-cover opacity-40">
+        <div class="relative z-10 max-w-3xl animate-fadeUp">
+            <p class="uppercase tracking-[0.3em] text-sm mb-4 text-slate-300">Coleção 2026</p>
+            <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Elegância é Atitude</h2>
+            <p class="mb-8 text-lg text-slate-200 max-w-xl mx-auto">Peças atemporais desenhadas para a mulher que define tendências, não segue.</p>
+            <a href="#colecao" class="bg-white text-black px-10 py-4 font-bold uppercase shadow-xl hover:bg-indigo-600 hover:text-white transition duration-300">Descobrir Coleção</a>
         </div>
     </header>
 
-    <section id="colecao" class="py-16 container mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-12 text-center uppercase tracking-tighter underline decoration-indigo-500">Destaques</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden text-center transition hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1539533318280-3f289ee1d30a?auto=format&fit=crop&w=600" class="w-full h-[450px] object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl uppercase">Sobretudo Minimalist</h4>
-                    <p class="text-indigo-600 font-black text-2xl mt-2">R$ 499,00</p>
-                    <button class="w-full mt-6 bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-600">Comprar Agora</button>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden text-center transition hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1572804013307-a9a11117bb41?auto=format&fit=crop&w=600" class="w-full h-[450px] object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl uppercase">Vestido Silk Floral</h4>
-                    <p class="text-indigo-600 font-black text-2xl mt-2">R$ 289,90</p>
-                    <button class="w-full mt-6 bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-600">Comprar Agora</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-8 text-center">
-        <p>&copy; 2026 STYLE.CO - Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+    <!-- Produtos -->
+    <section id="colecao" class="
