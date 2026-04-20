@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +20,7 @@
         html { scroll-behavior: smooth; }
 
         /* Efeito glass no menu */
-       .glass {
+      .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -30,9 +31,9 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-       .animate-fadeUp { animation: fadeUp 0.8s ease-out forwards; }
+      .animate-fadeUp { animation: fadeUp 0.8s ease-out forwards; }
 
-       .whatsapp-float {
+      .whatsapp-float {
             position: fixed; bottom: 20px; right: 20px;
             background-color: #25d366; color: white;
             width: 60px; height: 60px; border-radius: 50px;
@@ -40,19 +41,19 @@
             font-size: 30px; box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
             z-index: 1000; transition: all 0.3s;
         }
-       .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+      .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Botão WhatsApp -->
+    <!-- Botão WhatsApp - TROQUE O NÚMERO AQUI -->
     <a href="https://wa.me/5579999999999?text=Olá!%20Vim%20pela%20STYLE.CO%20e%20quero%20saber%20mais!" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Carrinho Lateral -->
     <div id="carrinho" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-[100] translate-x-full transition-transform duration-300">
-        <div class="p-6 flex-col h-full">
+        <div class="p-6 flex flex-col h-full">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-black">Sacola</h3>
                 <button onclick="toggleCarrinho()" class="text-2xl hover:text-indigo-600"><i class="fa-solid fa-xmark"></i></button>
@@ -86,16 +87,24 @@
         </div>
     </nav>
 
-    <!-- Banner -->
-    <header id="inicio" class="relative h-[90vh] flex items-center justify-center bg-slate-900 text-white text-center px-4">
+    <!-- Banner CORRIGIDO - Altura definida pra funcionar o botão -->
+    <header id="inicio" class="relative h-[500px] md:h-[600px] flex items-center justify-center bg-slate-900 text-white text-center px-4">
         <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071" alt="Banner Moda 2026" class="absolute w-full h-full object-cover opacity-40">
         <div class="relative z-10 max-w-3xl animate-fadeUp">
             <p class="uppercase tracking-[0.3em] text-sm mb-4 text-slate-300">Coleção 2026</p>
             <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Elegância é Atitude</h2>
             <p class="mb-8 text-lg text-slate-200 max-w-xl mx-auto">Peças atemporais desenhadas para a mulher que define tendências, não segue.</p>
-            <a href="#colecao" class="bg-white text-black px-10 py-4 font-bold uppercase shadow-xl hover:bg-indigo-600 hover:text-white transition duration-300">Descobrir Coleção</a>
+            <a href="#colecao" class="bg-white text-black px-10 py-4 font-bold uppercase shadow-xl hover:bg-indigo-600 hover:text-white transition duration-300 inline-block">Descobrir Coleção</a>
         </div>
     </header>
 
     <!-- Produtos -->
-    <section id="colecao" class="
+    <section id="colecao" class="py-20 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl md:text-5xl font-black mb-4">Destaques da Estação</h3>
+            <p class="text-slate-600 max-w-2xl mx-auto">Curadoria exclusiva com tecidos premium e corte impecável. Estoque limitado.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Produto 1 -->
+            <div class="
